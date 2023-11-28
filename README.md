@@ -1,2 +1,2 @@
 # website
-Here is my website for the Head First book
+Here is my new website git repo
