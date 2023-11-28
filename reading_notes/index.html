@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vocab</title>
+<style>
+
+dd {
+    color: rgb(52, 72, 158);
+}
+dt {
+    color: rgb(255, 130, 247);
+}
+
+body {
+    background-color: rgb(224, 228, 255);
+}
+h1, footer {
+    text-align: center;
+}
+footer>a, footer>a:visited {
+    text-decoration: none;
+    color: #555;
+}
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+</head>
+<body>
+<h1>Vocab I need to know</h1>
+<a href="https://learning-oreilly-com.eznvcc.vccs.edu/dtbrary/view/head-first-html/9781449324469/ch01.html">Click here for the reference book</a>
+<dl>
+    <dt>web server</dt>
+<dd>Web servers store and serve web pages, which are created from HTML and CSS. Browsers retrieve pages and render their content based on the HTML and CSS.</dd>
+<dt>web browser</dt>
+<dd>Browsers make requests for HTML pages, and they can also request from other sources like images.</dd>
+<dt>HTML</dt>
+<dd>HyperText Markup Language. It tells the browser what it needs to know to display your page.</dd>
+<dt>HTML comment</dt>
+<dd>HTML comments are not rendered by the browser you can use them by putting a less than sign next to an exclamation mark and two dashes, then your comment, and to close it, you put two dashes and a greater than sign.</dd>
+<dt>HTML element</dt>
+<dd>Element = Opening Tag + Content + Closing Tag</dd>
+<dt>HTML tag</dt>
+<dd>Tags tell the browser about the structure and meaning of your text. They are words or characters surrounded by angled brackets.</dd>
+<dt>HTML content</dt>
+<dd>The information that goes in between the tags(this would be content).</dd>
+<dt>HTML style element</dt>
+<dd>The HTML style element defines the style information for a document.</dd>
+<dt>style element</dt>
+<dd>It contains the CSS code to make a website look good.</dd>
+<dt>CSS</dt>
+<dd>Gives you a way to describe how your content should be presented. Used inside the style element.</dd>
+<dt>Color hex codes</dt>
+<dd>A combo of letters and numbers that you use to specify a color. It has a # before it.</dd>
+<dt>link element</dt>
+<dd>The link element is used to take you to different pages. Use the a tag and put the text you want for the link inside. Inside the first tag after the a but before the greater than sign, add herf="this is where you specify the destination of the link" (herf is an attribute).</dd>
+<dt>attribute</dt>
+<dd>Attributes give you a way to specify additional information about an element. Example: Type attribute specifies a style.</dd>
+<dt>attribute-value pair</dt>
+<dd>All attributes have values that are enclosed in double-quotes.</dd>
+<dt>href attribute</dt>
+<dd>Tells us the destination of a hyperlink.</dd>
+<dt>subdirectory (a.k.a. folder)</dt>
+<dd>A directory inside another directory.</dd>
+<dt>path</dt>
+<dd>The way you get from your page to the destination file. It can be going up or down as many directories as you want.</dd>
+</dl>
+<a href="https://marin_mccormack.codeberg.page/">Back to Homepage</a>
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
+
+

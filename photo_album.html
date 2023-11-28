@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Album</title>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+h1 {
+    color: rgb(255, 130, 247);
+    text-align: center;
+}
+body {
+    background-color: rgb(224, 228, 255);
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(255, 130, 247);
+}
+h1, footer {
+    text-align: center;
+}
+footer>a, footer>a:visited {
+    text-decoration: none;
+    color: #555;
+}
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+</head>
+<body>
+    <h1>Welcome to my photo album!</h1>
+    <h2>Please enjoy these photos from my summer trip to San Diego California!</h2>
+    <img src="images/coolcar.JPG" alt="car">
+    <img src="images/flags.JPG" alt="flags">
+    <img src="images/redcar2.JPG" alt="redcar2">
+    <img src="images/2surf.JPG" alt="surfers">
+    <img src="images/Encenitas.JPG" alt="encenitas sign">
+    <img src="images/greycar.JPG" alt="grey car">
+    <a href="https://marin_mccormack.codeberg.page/">Back to Homepage</a>
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
+

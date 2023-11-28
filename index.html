@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marin McCormack's Website</title>
+<style>
+h2 {
+    color: rgb(255, 130, 247);
+    text-align: center;
+}
+h1 {
+    color: rgb(255, 130, 247);
+    text-align: center;
+}
+body {
+    background-color: rgb(224, 228, 255);
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%
+}
+h1, footer {
+    text-align: center;
+}
+footer>a, footer>a:visited {
+    text-decoration: none;
+    color: #555;
+}
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+</head>
+<body>
+
+<h1>Welcome to Marin McCormack's website!</h1>
+<h2>This website is no longer functioning click <a href="https://github.com/Marin-McCormack/website">HERE</a> for the link to my new git repo</h2>
+<a href="https://marin_mccormack.codeberg.page/reading_notes/">Click here for importat vocabulary for Web Design</a>
+<h2>Click the image below to go to my photo album!</h2>
+<p><a href="https://marin_mccormack.codeberg.page/photo_album.html"><img src="images/beach_VW.JPG" alt="Beach"></a></p>
+
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
