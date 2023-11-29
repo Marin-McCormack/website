@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ninety-nine Cans of Energy Drink</title>
+<style>
+@import url(mystyle.css);
+@font-face {
+  font-family: "NerkoOne-Regular";
+  src: url(fonts/NerkoOne-Regular.ttf);
+}
+body {
+  font-family: 'NerkoOne-Regular', sans-serif;
+}
+h1 {
+  font-size: 3.5vw;
+}
+#song>p {
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+
+window.onload = init;
+</script>
+</head>
+<body>
+<header>
+<h1>Ninety-nine Cans of Energy Drink</h1>
+</header>
+<main id="song">
+
+</main>
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+<script>
+let drink = "Dr. Pepper";
+let lyrics = "";
+let cans = 99;
+
+while (cans > 1) {
+  lyrics += "<p>";
+  lyrics += cans + " cans of " + drink + " on the wall <br>";
+  lyrics += cans + " cans of " + drink + " on the wall <br>";
+  lyrics += "Take one down, pass it around,";
+  lyrics += "</p>";
+  cans--;
+}
+lyrics += "<p>";
+lyrics += cans + " can of " + drink + " on the wall <br>";
+lyrics += cans + " can of " + drink + " on the wall <br>";
+lyrics += "Take one down, pass it around, no more cans of ";
+lyrics += drink + " on the wall :-(";
+lyrics += "</p>";
+
+document.getElementById("song").innerHTML = lyrics;
+</script>
+</body>
+</html>
+
