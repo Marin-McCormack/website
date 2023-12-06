@@ -25,7 +25,11 @@ window.onload = init;
 </script>
 </head>
 <body>
-<h1>Samples from pages 35-42</h1>
+<h1>Samples from chapter 2</h1>
+<br>
+<h2>View page source/ inspect this page to see whats going on behind the scenes</h2>
+<br>
+<h2>My Awesome Christmas playlist</h2>
 <script>
 let temp = 98.6;
 let beanCounter = 4;
@@ -58,8 +62,19 @@ for (scoops = 10; scoops > 0; scoops --){
     console.log("There's more ice cream");
 }
 console.log("life without ice cream isn't the same");
+//End of console.loging
+function addSongs(){
+    let song1 = document.getElementById("song1");
+    let song2 = document.getElementById("song2");
+    let song3 = document.getElementById("song3");
+
+    song1.innerHTML = "Last Christmas, Wham!";
+    song2.innerHTML = "All I Want for Christmas Is You, MAriah Carey";
+    song3.innerHTML = "Rockn' Around The Christmas Tree, Brenda Lee";
+}
+
 </script>
-<h2>View page source/ inspect this page to see whats going on behind the scenes</h2>
+
 <footer>
 <a id="vLink1"><strong> HTML </strong> Valid! </a> |
 <a id="vLink2"><strong> CSS </strong> Valid! </a>
