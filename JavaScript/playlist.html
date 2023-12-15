@@ -20,8 +20,11 @@ function addval() {
                         loc + '?profile=css3';
   document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
   document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+function loadp() {
   loadPlaylist();
 }
+window.onload = loadp;
 window.onload = addval;
 </script>
 <script src="playlist_store.js"></script>
