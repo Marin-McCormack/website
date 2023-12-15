@@ -13,7 +13,7 @@ footer>a, footer>a:visited {
 }
 </style>
 <script>
-function init() {
+function addval() {
   var loc = window.location.href;
   var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
   var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
@@ -22,7 +22,7 @@ function init() {
   document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
   loadPlaylist();
 }
-window.onload = init;
+window.onload = addval;
 </script>
 <script src="playlist_store.js"></script>
 <script src="playlist.js"></script>
