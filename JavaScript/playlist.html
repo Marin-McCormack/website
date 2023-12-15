@@ -24,8 +24,10 @@ function addval() {
 function loadp() {
   loadPlaylist();
 }
-window.onload = loadp;
-window.onload = addval;
+window.onload = function(){
+  loadp();
+  addval();
+};
 </script>
 <script src="playlist_store.js"></script>
 <script src="playlist.js"></script>
