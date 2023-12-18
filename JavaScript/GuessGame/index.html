@@ -13,7 +13,7 @@ footer>a, footer>a:visited {
 }
 </style>
 <script>
-function init() {
+function addval() {
   var loc = window.location.href;
   var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
   var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
@@ -21,32 +21,50 @@ function init() {
   document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
   document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
 }
+
+function init() {
+  addval();
+
+  let guessInput = document.getElementById("guess");
+  let resultDisplay = document.getElementById("result");
+
+  document.getElementById("guessForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    let guess = guessInput.value;
+    let answer = checkGuess(guess);
+    resultDisplay.textContent = answer;
+  });
+}
 window.onload = init;
 
-let guessInput = document.grtElementById("guess");
-let guess = guessInput.value;
-let answer = checkGuess(guess);
-
 function checkGuess(guess){
-  let answers = ["red",
-                 "green",
-                 "blue"];
+  let answers = ["red", "green", "blue"];
   let index = Math.floor(Math.random() * answers.length);
-  if (guess = answers[index]){
-    answer = "You're right! I was thinking of " + answers[index];
-  }else{
-    answer = "Sorry, I was thinking of " + answers[index];
+  if (guess === answers[index]){
+    return "You're right! I was thinking of " + answers[index];
+  } else {
+    return "Sorry, I was thinking of " + answers[index];
   }
-  return answer;
 }
 </script>
 </head>
 <body>
 <h1>Guess Game</h1>
 
+<form id="guessForm">
+  <label for="guess">Enter your guess:</label>
+  <input type="text" id="guess" name="guess" placeholder="Enter your guess" required>
+  <button type="submit">Submit</button>
+</form>
+
+<p id="result"></p>
+
 <footer>
 <a id="vLink1"><strong> HTML </strong> Valid! </a> |
 <a id="vLink2"><strong> CSS </strong> Valid! </a>
 </footer>
+
 </body>
 </html>
+
