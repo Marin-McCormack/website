@@ -22,10 +22,27 @@ function init() {
   document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
 }
 window.onload = init;
+
+let guessInput = document.grtElementById("guess");
+let guess = guessInput.value;
+let answer = checkGuess(guess);
+
+function checkGuess(guess){
+  let answers = ["red",
+                 "green",
+                 "blue"];
+  let index = Math.floor(Math.random() * answers.length);
+  if (guess = answers[index]){
+    answer = "You're right! I was thinking of " + answers[index];
+  }else{
+    answer = "Sorry, I was thinking of " + answers[index];
+  }
+  return answer;
+}
 </script>
 </head>
 <body>
-<h1>Title</h1>
+<h1>Guess Game</h1>
 
 <footer>
 <a id="vLink1"><strong> HTML </strong> Valid! </a> |
