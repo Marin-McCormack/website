@@ -47,6 +47,10 @@
                 };
                 return imageSources[sport] || "";
            }
+           function myFunction(arg1) {
+               alert("The function has been called and was passed " + arg1);
+               return "myFunction() return value";
+           }
         </script>
     </head>
     <body>
@@ -62,7 +66,11 @@
             <input type="radio" name="sports" value="Basketball" />Basketball<br/>
             <input type="radio" name="sports" value="Tennis" />Tennis<br/>
             <input type="radio" name="sports" value="Golf" />Golf<br/>
-            <p><input type="button" value="VOTE" onclick="vote()" /> <input type="reset" value="RESET" onclick="resetImage()"/></p>
+            <p>
+                <input type="button" value="VOTE" onclick="vote()" /> 
+                <input type="reset" value="RESET" onclick="resetImage()"/> 
+                <input type="button" value="Call Function" onclick="alert(myFunction('a string of text'));" />
+            </p>
             <p><input type="text" id="txt" size="40" onblur="upperCase()" /> Click in then out!</p>
             <p><input type="text" id="txt1" size="40" onmouseover="SayHello()" /> Hover over this field!</p>
             <p><input type="text" id="txt2" size="40" onmouseout="SayGoodbye()" /> Hover this field then away!</p>
