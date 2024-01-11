@@ -9,6 +9,9 @@
                 for (i = 0; i < document.myform.sports.length; i++) {
                     if (document.myform.sports[i].checked == true) {
                         t = t + document.myform.sports[i].value;
+
+                        var imageSrc = getImageSrc(document.myform.sports[i].value);
+                        document.getElementById("sportImage").src = imageSrc;
                     }
                 }
                 if (t == "Your favorite sport is: ") {
@@ -18,6 +21,9 @@
                     document.getElementById("txt1").value = t;
                     document.getElementById("txt2").value = t;
                 }
+            }
+            function resetImage() {
+                document.getElementById("sportImage").src = "";
             }
             function upperCase() {
                 var x = document.getElementById("txt").value;
@@ -29,6 +35,18 @@
             function SayGoodbye() {
                 alert("Your mouse has left the text!");
             }
+            function getImageSrc(sport){
+                var imageSources = {
+                    "Football": "football.jpeg"
+                    "Hocky": "hocky.jpeg"
+                    "Auto Racing": "auto_racing.jpeg"
+                    "MMA": "mma.jpeg"
+                    "Basketball": "basketball.jpeg"
+                    "Tennis": "tennis.jpeg"
+                    "Golf": "golf.jpeg"
+                };
+                return imageSources[sport] || "";
+           }
         </script>
     </head>
     <body>
@@ -44,9 +62,10 @@
             <input type="radio" name="sports" value="Basketball" />Basketball<br/>
             <input type="radio" name="sports" value="Tennis" />Tennis<br/>
             <input type="radio" name="sports" value="Golf" />Golf<br/>
-            <p><input type="button" value="VOTE" onclick="vote()" /> <input type="reset" value="RESET" /></p>
+            <p><input type="button" value="VOTE" onclick="vote()" /> <input type="reset" value="RESET" onclick="resetImage()"/></p>
             <p><input type="text" id="txt" size="40" onblur="upperCase()" /> Click in then out!</p>
             <p><input type="text" id="txt1" size="40" onmouseover="SayHello()" /> Hover over this field!</p>
             <p><input type="text" id="txt2" size="40" onmouseout="SayGoodbye()" /> Hover this field then away!</p>
         </form>
-    </body>
+        <img id="sportImage" src="" alt="Sport image" style="max-width: 100%; max-height: 200px;">
+</body>
