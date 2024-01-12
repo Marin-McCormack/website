@@ -105,11 +105,11 @@
             }
         }
        function getCheckedSport() {
-            return getCheckedValue(document.forms['sportsForm'].elements['sport']);
+            return getCheckedValue(document.myform.elements['sport']);
         }
 
         function setCheckedSport(sport) {
-            setCheckedValue(document.forms['sportsForm'].elements['sport'], sport);
+            setCheckedValue(document.myform.elements['sport'], sport);
         }
         </script>
     <style type="text/css">
@@ -164,12 +164,5 @@
         </p>
     </form>
     <img id="sportImage" src="" alt="Sport image" style="max-width: 100%; max-height: 200px;">
-    <!-- Sports-related form for radio buttons -->
-    <form name="sportsForm" method="get" action="" onsubmit="return false;">
-        <input type="radio" value="Football" name="sport" style="display: none;" />
-        <input type="radio" value="Soccer" name="sport" style="display: none;" />
-        <input type="radio" value="Basketball" name="sport" style="display: none;" />
-        <input type="radio" value="Tennis" name="sport" style="display: none;" />
-        <input type="radio" value="Baseball" name="sport" style="display: none;" />
     </form>        
 </body>
