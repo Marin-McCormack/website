@@ -73,7 +73,56 @@
         function displayResult(result) {
             document.write("<p>The combined performance score is: <strong>" + result + "</strong></p>");
         }
+        function getCheckedValue(radioObj) {
+            if (!radioObj)
+                return "";
+            var radioLength = radioObj.length;
+            if (radioLength == undefined)
+                if (radioObj.checked)
+                    return radioObj.value;
+                else return "";
+            for (var i = 0; i < radioLength; i++) {
+                if (radioObj[i].checked) {
+                    return radioObj[i].value;
+                }
+            }
+            return "";
+        }
+
+        function setCheckedValue(radioObj, newValue) {
+            if (!radioObj)
+                return;
+            var radioLength = radioObj.length;
+            if (radioLength == undefined) {
+                radioObj.checked = radioObj.value == newValue.toString();
+                return;
+            }
+            for (var i = 0; i < radioLength; i++) {
+                radioObj[i].checked = false;
+                if (radioObj[i].value == newValue.toString()) {
+                    radioObj[i].checked = true;
+                }
+            }
+        }
+       function getCheckedSport() {
+            return getCheckedValue(document.forms['sportsForm'].elements['sport']);
+        }
+
+        function setCheckedSport(sport) {
+            setCheckedValue(document.forms['sportsForm'].elements['sport'], sport);
+        }
         </script>
+    <style type="text/css">
+        <!--
+        label {
+            background-color: #fdfdf0;
+            color: black;
+            border: 2px outset #8b8378;
+            padding: 0.1em 2ex 0.1em 0.5ex;
+            line-height: 1.6em;
+        }
+        //-->
+    </style>
     </head>
     <body>
         <h3>CIW Advanced HTML5 and CSS3 Specialist</h3>
@@ -98,6 +147,21 @@
             <p><input type="text" id="txt" size="40" onblur="upperCase()" /> Click in then out!</p>
             <p><input type="text" id="txt1" size="40" onmouseover="SayHello()" /> Hover over this field!</p>
             <p><input type="text" id="txt2" size="40" onmouseout="SayGoodbye()" /> Hover this field then away!</p>
+                <p>
+            <!-- Sports-related radio buttons -->
+            <label for="football"> <input type="radio" value="Football" name="sport" /> Football</label>
+            &nbsp;<label for="soccer"> <input type="radio" value="Soccer" name="sport" /> Soccer</label>
+            &nbsp;<label for="basketball"> <input type="radio" value="Basketball" name="sport" /> Basketball</label>
+            &nbsp;<label for="tennis"> <input type="radio" value="Tennis" name="sport" /> Tennis</label>
+            &nbsp;<label for="baseball"> <input type="radio" value="Baseball" name="sport" /> Baseball</label>
+        </p>
+        <p>
+            <!-- Sports-related radio button actions -->
+            <input type="button" value="Show Selected Sport" onclick="alert('Selected sport is: ' + getCheckedSport());" />
+            &nbsp;<input type="button" value="Set Checked to Soccer" onclick="setCheckedSport('Soccer');" />
+            &nbsp;<input type="button" value="Set Checked to Tennis" onclick="setCheckedSport('Tennis');" />
+            &nbsp;<input type="button" value="Uncheck All" onclick="setCheckedSport('');" />
+        </p>
         </form>
         <img id="sportImage" src="" alt="Sport image" style="max-width: 100%; max-height: 200px;">
 </body>
