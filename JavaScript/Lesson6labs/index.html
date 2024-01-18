@@ -5,8 +5,29 @@
         <title>Optional Lab 6-2</title>
         <script src="quiz.js"></script>
         <script>
-            function vote() {
-                var t = "Your favorite sport is: ";
+            var voteCounter = JSON.parse(localStorage.getItem("voteCounter")) || {
+	        "football": 0,
+		"Hocky": 0,
+		"Auto Racing": 0,
+		"MMA": 0,
+		"Basketball": 0,
+		"Tennis": 0,
+		"Golf":0
+	    };
+	    function vote() {
+                var selectedSport = getCheckedSport();
+
+            if (selectedSport) {
+                voteCounter[selectedSport]++;
+                updateVoteCounter();
+                saveVoteCounterToLocalStorage();
+                
+                var imageSrc = getImageSrc(selectedSport);
+                document.getElementById("sportImage").src = imageSrc;
+            } else {
+                alert("Please choose a sport before voting.");
+            }
+		var t = "Your favorite sport is: ";
                 for (i = 0; i < document.myform.sports.length; i++) {
                     if (document.myform.sports[i].checked == true) {
                         t = t + document.myform.sports[i].value;
@@ -23,6 +44,18 @@
                     document.getElementById("txt2").value = t;
                 }
             }
+        function updateVoteCounter() {
+            var counterText = "";
+            for (var sport in voteCounter) {
+                counterText += sport + ": " + voteCounter[sport] + " votes, ";
+            }
+            document.getElementById("voteCounter").innerText = counterText.slice(0, -2);
+        }
+
+        function saveVoteCounterToLocalStorage() {
+            localStorage.setItem("voteCounter", JSON.stringify(voteCounter));
+        }
+
             function resetImage() {
                 document.getElementById("sportImage").src = "";
             }
@@ -166,7 +199,8 @@ body {
             <input type="button" value="Call Function" onclick="console.log(myFunction('a string of text'));" />
             <input type="button" value="Take Quiz" onclick="takeQuiz()" />
             <input type="button" value="Calculate Stats" onclick="calculateStats()" />
-        </p>
+            <input type="button" value="VOTE" onclick="vote()" />
+	</p>
         <p><input type="text" id="txt" size="40" onblur="upperCase()" /> Click in then out!</p>
         <p><input type="text" id="txt1" size="40" onmouseover="SayHello()" /> Hover over this field!</p>
         <p><input type="text" id="txt2" size="40" onmouseout="SayGoodbye()" /> Hover this field then away!</p>
@@ -185,7 +219,8 @@ body {
             &nbsp;<input type="button" value="Set Checked to Tennis" onclick="setCheckedSport('Tennis');" />
             &nbsp;<input type="button" value="Uncheck All" onclick="setCheckedSport('');" />
         </p>
+        <p id="voteCounter"></p>
     </form>
     <img id="sportImage" src="" alt="Sport image" style="max-width: 100%; max-height: 200px;">
     </form>        
-</body>
+    </body>
