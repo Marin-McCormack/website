@@ -31,10 +31,10 @@
                 document.getElementById("txt").value = x.toUpperCase();
             }
             function SayHello() {
-                alert("Your mouse is over the text!");
+                console.log("Your mouse is over the text!");
             }
             function SayGoodbye() {
-                alert("Your mouse has left the text!");
+                console.log("Your mouse has left the text!");
             }
             function getImageSrc(sport){
                 var imageSources = {
@@ -49,11 +49,11 @@
                 return imageSources[sport] || "";
            }
            function myFunction(arg1) {
-               alert("The function has been called and was passed " + arg1);
+               console.log("The function has been called and was passed " + arg1);
                return "myFunction() return value";
            }
                    function calculateStats() {
-            alert("Please enter the performance stats for two sports teams.");
+            console.log("Please enter the performance stats for two sports teams.");
 
             var team1Score = prompt("Enter the score for Team 1:", "");
             var team2Score = prompt("Enter the score for Team 2:", "");
@@ -62,7 +62,7 @@
                 var result = addNumbers(parseFloat(team1Score), parseFloat(team2Score));
                 displayResult(result);
             } else {
-                alert("Invalid input. Please enter numerical values.");
+                console.log("Invalid input. Please enter numerical values.");
             }
         }
 
@@ -140,7 +140,7 @@
         <p>
             <input type="button" value="VOTE" onclick="vote()" />
             <input type="reset" value="RESET" onclick="resetImage()" />
-            <input type="button" value="Call Function" onclick="alert(myFunction('a string of text'));" />
+            <input type="button" value="Call Function" onclick="console.log(myFunction('a string of text'));" />
             <input type="button" value="Take Quiz" onclick="takeQuiz()" />
             <input type="button" value="Calculate Stats" onclick="calculateStats()" />
         </p>
@@ -157,7 +157,7 @@
         </p>
         <p>
             <!-- Sports-related radio button actions -->
-            <input type="button" value="Show Selected Sport" onclick="alert('Selected sport is: ' + getCheckedSport());" />
+            <input type="button" value="Show Selected Sport" onclick="console.log('Selected sport is: ' + getCheckedSport());" />
             &nbsp;<input type="button" value="Set Checked to Soccer" onclick="setCheckedSport('Soccer');" />
             &nbsp;<input type="button" value="Set Checked to Tennis" onclick="setCheckedSport('Tennis');" />
             &nbsp;<input type="button" value="Uncheck All" onclick="setCheckedSport('');" />
