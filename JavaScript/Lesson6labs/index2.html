@@ -206,12 +206,11 @@ Vote for your favorite sport (an image related to the sport you chose will appea
         <input type="button" value="Take Quiz" onclick="takeQuiz()" />
         <input type="button" value="Calculate Stats" onclick="calculateStats()" />
     </p>
-    <p><input type="text" id="txt" size="40"
-onblur="upperCase()" /> Click in then out!</p>
-<p><input type="text" id="txt1" size="40" onmouseover="SayHello()" /> Hover over this field!</p>
-<p><input type="text" id="txt2" size="40" onmouseout="SayGoodbye()" /> Hover this field then away!</p>
-<p>
-    <!-- Sports-related radio buttons -->
+<p><input type="text" id="txt" size="40" onfocus="this.value='';" onblur="upperCase(); updateTextFields(getCheckedSport());" value="Click in then out!" /></p>
+<p><input type="text" id="txt1" size="40" onmouseover="SayHello(); updateTextFields(getCheckedSport());" value="Hover over this field!" /></p>
+<p><input type="text" id="txt2" size="40" onmouseout="SayGoodbye(); updateTextFields(getCheckedSport());" value="Hover this field then away!" /></p>
+    
+<!-- Sports-related radio buttons -->
     <label for="football"> <input type="radio" value="Football" name="sport" /> Football</label>
     &nbsp;<label for="soccer"> <input type="radio" value="Soccer" name="sport" /> Soccer</label>
     &nbsp;<label for="basketball"> <input type="radio" value="Basketball" name="sport" /> Basketball</label>
