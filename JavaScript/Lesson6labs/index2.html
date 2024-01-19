@@ -17,19 +17,24 @@
 
         function vote() {
             var selectedSport = getCheckedSport();
+if (selectedSport) {
+        voteCounter[selectedSport]++;
+        updateVoteCounter();
+        saveVoteCounterToLocalStorage();
 
-            if (selectedSport) {
-                voteCounter[selectedSport]++;
-                updateVoteCounter();
-                saveVoteCounterToLocalStorage();
+        var imageSrc = getImageSrc(selectedSport);
+        document.getElementById("sportImage").src = imageSrc;
 
-                var imageSrc = getImageSrc(selectedSport);
-                document.getElementById("sportImage").src = imageSrc;
-            } else {
-                alert("Please choose a sport before voting.");
-                return;
-            }
-        }
+        // Update text fields
+        var t = "Your favorite sport is: " + selectedSport;
+        document.getElementById("txt").value = t;
+        document.getElementById("txt1").value = t;
+        document.getElementById("txt2").value = t;
+    } else {
+        alert("Please choose a sport before voting.");
+        return;
+    }
+}
                         var t = "Your favorite sport is: ";
                 for (i = 0; i < document.myform.sports.length; i++) {
                     if (document.myform.sports[i].checked == true) {
@@ -45,8 +50,6 @@
                     document.getElementById("txt").value = t;
                     document.getElementById("txt1").value = t;
                     document.getElementById("txt2").value = t;
-                }
-            }
 
         function updateVoteCounter() {
             var counterText = "";
