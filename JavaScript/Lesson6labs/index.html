@@ -7,7 +7,7 @@
         <script>
             var voteCounter = JSON.parse(localStorage.getItem("voteCounter")) || {
 	        "football": 0,
-		"Hocky": 0,
+		"Hockey": 0,
 		"Auto Racing": 0,
 		"MMA": 0,
 		"Basketball": 0,
@@ -26,7 +26,10 @@
                 document.getElementById("sportImage").src = imageSrc;
             } else {
                 alert("Please choose a sport before voting.");
-            }
+                return;
+	    }
+	    }
+	    
 		var t = "Your favorite sport is: ";
                 for (i = 0; i < document.myform.sports.length; i++) {
                     if (document.myform.sports[i].checked == true) {
@@ -44,7 +47,7 @@
                     document.getElementById("txt2").value = t;
                 }
             }
-        function updateVoteCounter() {
+	    function updateVoteCounter() {
             var counterText = "";
             for (var sport in voteCounter) {
                 counterText += sport + ": " + voteCounter[sport] + " votes, ";
@@ -223,5 +226,5 @@ body {
         </p>
     </form>
     <img id="sportImage" src="" alt="Sport image" style="max-width: 100%; max-height: 200px;">
-    </form>        
     </body>
+</html>
