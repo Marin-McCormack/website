@@ -30,13 +30,24 @@
                 return;
             }
         }
-        function updateTextFields(selectedSport) {
-                var t = "Your favorite sport is: " + selectedSport;
+                        var t = "Your favorite sport is: ";
+                for (i = 0; i < document.myform.sports.length; i++) {
+                    if (document.myform.sports[i].checked == true) {
+                        t = t + document.myform.sports[i].value;
 
-                document.getElementById("txt").value = t;
-                document.getElementById("txt1").value = t;
-                document.getElementById("txt2").value = t;
+                        var imageSrc = getImageSrc(document.myform.sports[i].value);
+                        document.getElementById("sportImage").src = imageSrc;
+                    }
+                }
+                if (t == "Your favorite sport is: ") {
+                    document.getElementById("txt").value = "Choose a sport";
+                } else {
+                    document.getElementById("txt").value = t;
+                    document.getElementById("txt1").value = t;
+                    document.getElementById("txt2").value = t;
+                }
             }
+
         function updateVoteCounter() {
             var counterText = "";
             for (var sport in voteCounter) {
