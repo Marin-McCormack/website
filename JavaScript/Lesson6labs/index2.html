@@ -30,7 +30,13 @@
                 return;
             }
         }
+        function updateTextFields(selectedSport) {
+                var t = "Your favorite sport is: " + selectedSport;
 
+                document.getElementById("txt").value = t;
+                document.getElementById("txt1").value = t;
+                document.getElementById("txt2").value = t;
+            }
         function updateVoteCounter() {
             var counterText = "";
             for (var sport in voteCounter) {
