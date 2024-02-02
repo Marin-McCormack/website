@@ -10,12 +10,34 @@
     <h1>Welcome to the Khan Academy Page!</h1>
 
     <script>
+          var sunSize = 30; // Initial size for the sun
+
     function setup() {
-      createCanvas(800, 400); // Create a canvas
-      drawFace(0, 0); // Draw face at the top-left corner
-      drawFrog(400, 0); // Draw frog at the top-right corner
+      createCanvas(400, 400); // Create a canvas
     }
 
+    function draw() {
+      drawBackground(); // Draw the background
+      drawFace(0, 0); // Draw face at the top-left corner
+      drawFrog(400, 0); // Draw frog at the top-right corner
+
+      sunSize = sunSize + 1; // Increase sun size for animation
+    }
+function drawBackground() {
+        noStroke();
+      // The beautiful blue sky
+      background(82, 222, 240);
+
+      // The starting size for the sun
+      var sunSize = 30;
+      // The sun, a little circle on the horizon
+      fill(255, 204, 0);
+      ellipse(200, 298, sunSize, sunSize);
+
+      // The land, blocking half of the sun
+      fill(76, 168, 67);
+      rect(0, 300, 400, 100);
+    }
         function drawFace(x, y) {
     translate(x, y); // Move the origin to (x, y)
 
