@@ -10,54 +10,54 @@
     <h1>Welcome to the Khan Academy Page!</h1>
 
     <script>
-    // Your p5.js code goes here
-        function setup() {
-      createCanvas(800, 400); // Increase the canvas size to accommodate both drawings
-      drawFace(0, 0); // Draw face at the top-left corner
-      drawFrog(400, 0); // Draw frog at the top-right corner
-    }
-    function drawFace(){ 
+  function drawFace(x, y) {
+    translate(x, y); // Move the origin to (x, y)
+
     noStroke();
 
-      // face
-      fill(255, 255, 0);
-      ellipse(202, 208, 300, 300);
+    // face
+    fill(255, 255, 0);
+    ellipse(202, 208, 300, 300);
 
-      // eyes
-      fill(46, 46, 41);
-      ellipse(157, 151, 40, 40);
-      ellipse(304, 142, 40, 40);
+    // eyes
+    fill(46, 46, 41);
+    ellipse(157, 151, 40, 40);
+    ellipse(304, 142, 40, 40);
 
-      // mouth
-      fill(252, 65, 65);
-      ellipse(257, 240, 120, 136);
+    // mouth
+    fill(252, 65, 65);
+    ellipse(257, 240, 120, 136);
+
     resetMatrix(); // Reset the translation matrix
-    }
-    function drawFrog(){
-      // Frog
-        background(255);
-      var x = 200;
-      var y = 250;
+}
 
-      noStroke();
-      fill(30, 204, 91); // a nice froggy green!
+function drawFrog(x, y) {
+    translate(x, y); // Move the origin to (x, y)
 
-      ellipse(x, y, 200, 100); // face
-      ellipse(x - 50, y - 50, 40, 40); // left eye socket
-      ellipse(x + 50, y - 50, 40, 40); // right eye socket
+    var frogX = 200;
+    var frogY = 250;
 
-      fill(255, 255, 255); // for the whites of the eyes!
-      ellipse(x - 50, y - 50, 30, 30); // left eyeball
-      ellipse(x + 50, y - 50, 30, 30); // right eyeball
+    noStroke();
+    fill(30, 204, 91); // a nice froggy green!
 
-      fill(10, 10, 10);
-      ellipse(x,y,100,50);
+    ellipse(frogX, frogY, 200, 100); // face
+    ellipse(frogX - 50, frogY - 50, 40, 40); // left eye socket
+    ellipse(frogX + 50, frogY - 50, 40, 40); // right eye socket
 
-      rect(x-50,y-50, 10,10);
-      rect(x+50,y-50, 10,10);
-        resetMatrix(); // Reset the translation matrix
-    }
-  </script>
+    fill(255, 255, 255); // for the whites of the eyes!
+    ellipse(frogX - 50, frogY - 50, 30, 30); // left eyeball
+    ellipse(frogX + 50, frogY - 50, 30, 30); // right eyeball
+
+    fill(10, 10, 10);
+    ellipse(frogX, frogY, 100, 50);
+
+    rect(frogX - 50, frogY - 50, 10, 10);
+    rect(frogX + 50, frogY - 50, 10, 10);
+
+    resetMatrix(); // Reset the translation matrix
+}
+
+    </script>
 </body>
 </html>
 
