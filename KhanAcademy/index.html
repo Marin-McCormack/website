@@ -10,7 +10,13 @@
     <h1>Welcome to the Khan Academy Page!</h1>
 
     <script>
-  function drawFace(x, y) {
+    function setup() {
+      createCanvas(800, 400); // Create a canvas
+      drawFace(0, 0); // Draw face at the top-left corner
+      drawFrog(400, 0); // Draw frog at the top-right corner
+    }
+
+        function drawFace(x, y) {
     translate(x, y); // Move the origin to (x, y)
 
     noStroke();
