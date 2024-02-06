@@ -7,10 +7,10 @@
   <title>Khan Academy</title>
 </head>
 <body>
-    <h1>Welcome to the Khan Academy Page!</h1>
+  <h1>Welcome to the Khan Academy Page!</h1>
 
-    <script>
-          var sunSize = 30; // Initial size for the sun
+  <script>
+    var sunSize = 30; // Initial size for the sun
 
     function setup() {
       createCanvas(400, 400); // Create a canvas
@@ -18,18 +18,16 @@
 
     function draw() {
       drawBackground(); // Draw the background
-      drawFace(0, 0); // Draw face at the top-left corner
       drawFrog(400, 0); // Draw frog at the top-right corner
-
+drawFace(0, 0); // Draw face at the top-left corner
       sunSize = sunSize + 1; // Increase sun size for animation
     }
-function drawBackground() {
-        noStroke();
+
+    function drawBackground() {
+      noStroke();
       // The beautiful blue sky
       background(82, 222, 240);
 
-      // The starting size for the sun
-      var sunSize = 30;
       // The sun, a little circle on the horizon
       fill(255, 204, 0);
       ellipse(200, 298, sunSize, sunSize);
@@ -38,54 +36,56 @@ function drawBackground() {
       fill(76, 168, 67);
       rect(0, 300, 400, 100);
     }
-        function drawFace(x, y) {
-    translate(x, y); // Move the origin to (x, y)
 
-    noStroke();
+    function drawFace(x, y) {
+      push(); // Save the current drawing style
+      translate(x, y); // Move the origin to (x, y)
 
-    // face
-    fill(255, 255, 0);
-    ellipse(202, 208, 300, 300);
+      noStroke();
 
-    // eyes
-    fill(46, 46, 41);
-    ellipse(157, 151, 40, 40);
-    ellipse(304, 142, 40, 40);
+      // face
+      fill(255, 255, 0);
+      ellipse(202, 208, 300, 300);
 
-    // mouth
-    fill(252, 65, 65);
-    ellipse(257, 240, 120, 136);
+      // eyes
+      fill(46, 46, 41);
+      ellipse(157, 151, 40, 40);
+      ellipse(304, 142, 40, 40);
 
-    resetMatrix(); // Reset the translation matrix
-}
+      // mouth
+      fill(252, 65, 65);
+      ellipse(257, 240, 120, 136);
 
-function drawFrog(x, y) {
-    translate(x, y); // Move the origin to (x, y)
+      pop(); // Restore the previous drawing style
+    }
 
-    var frogX = 200;
-    var frogY = 250;
+    function drawFrog(x, y) {
+      push(); // Save the current drawing style
+      translate(x, y); // Move the origin to (x, y)
 
-    noStroke();
-    fill(30, 204, 91); // a nice froggy green!
+      var frogX = 200;
+      var frogY = 250;
 
-    ellipse(frogX, frogY, 200, 100); // face
-    ellipse(frogX - 50, frogY - 50, 40, 40); // left eye socket
-    ellipse(frogX + 50, frogY - 50, 40, 40); // right eye socket
+      noStroke();
+      fill(30, 204, 91); // a nice froggy green!
 
-    fill(255, 255, 255); // for the whites of the eyes!
-    ellipse(frogX - 50, frogY - 50, 30, 30); // left eyeball
-    ellipse(frogX + 50, frogY - 50, 30, 30); // right eyeball
+      ellipse(frogX, frogY, 200, 100); // face
+      ellipse(frogX - 50, frogY - 30, 40, 40); // left eye socket
+      ellipse(frogX + 50, frogY - 30, 40, 40); // right eye socket
 
-    fill(10, 10, 10);
-    ellipse(frogX, frogY, 100, 50);
+      fill(255, 255, 255); // for the whites of the eyes!
+      ellipse(frogX - 50, frogY - 30, 30, 30); // left eyeball
+      ellipse(frogX + 50, frogY - 30, 30, 30); // right eyeball
 
-    rect(frogX - 50, frogY - 50, 10, 10);
-    rect(frogX + 50, frogY - 50, 10, 10);
+      fill(10, 10, 10);
+      ellipse(frogX, frogY + 20, 100, 50);
 
-    resetMatrix(); // Reset the translation matrix
-}
+      rect(frogX - 50, frogY + 20, 10, 10);
+      rect(frogX + 50, frogY + 20, 10, 10);
 
-    </script>
+      pop(); // Restore the previous drawing style
+    }
+  </script>
 </body>
 </html>
 
