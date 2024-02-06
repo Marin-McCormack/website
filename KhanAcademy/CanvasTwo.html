@@ -5,19 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <title>Khan Academy</title>
+<style>
+    h1, footer {
+        text-align: center;
+    }
+    footer>a, footer>a:visited {
+        text-decoration: none;
+        color: #555;
+    }
+</style>
+  <script>
+      function init() {
+      var loc = window.location.href;
+      var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+      var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                            loc + '?profile=css3';
+      document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+      document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+      }
+      window.onload = init;
+   </script>
 </head>
 <body>
     <h1>Welcome to the Khan Academy Page!</h1>
 
     <script>
     function setup() {
-      createCanvas(800, 400); // Create a canvas
-      drawFace(0, 0); // Draw face at the top-left corner
-      drawFrog(400, 0); // Draw frog at the top-right corner
+      createCanvas(800, 400);
+      drawFace(0, 0); 
+      drawFrog(400, 0);
     }
 
         function drawFace(x, y) {
-    translate(x, y); // Move the origin to (x, y)
+    translate(x, y);
 
     noStroke();
     // face
@@ -30,10 +50,10 @@
     // mouth
     fill(252, 65, 65);
     ellipse(257, 240, 120, 136);
-    resetMatrix(); // Reset the translation matrix
+    resetMatrix();
 }
 function drawFrog(x, y) {
-    translate(x, y); // Move the origin to (x, y)
+    translate(x, y);
     var frogX = 200;
     var frogY = 250;
     noStroke();
@@ -48,8 +68,12 @@ function drawFrog(x, y) {
     ellipse(frogX, frogY, 100, 50);
     rect(frogX - 50, frogY - 50, 10, 10);
     rect(frogX + 50, frogY - 50, 10, 10);
-    resetMatrix(); // Reset the translation matrix
+    resetMatrix();
 }
     </script>
+     <footer>
+    <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+    <a id="vLink2"><strong> CSS </strong> Valid! </a>
+    </footer>
 </body>
 </html>
