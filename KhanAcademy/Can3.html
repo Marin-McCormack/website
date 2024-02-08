@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <title>Khan Academy</title>
+  <style>
+    #faceFrogCanvasContainer,
+    #sunCloudCanvasContainer,
+    #thirdCanvasContainer {
+      display: inline-block;
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
   <h1>Welcome to the Khan Academy Page!</h1>
@@ -19,27 +27,24 @@
   <div id="thirdCanvasContainer"></div>
 
   <script>
-    // Create canvas for face and frog
-    let faceFrogCanvas = createCanvas(800, 400);
-    faceFrogCanvas.parent('faceFrogCanvasContainer');
+    let leftX = 160;
+    let rightX = 200;
+    let sunRadius = 100;
 
-    // Create canvas for sun and clouds
-    let sunCloudCanvas = createCanvas(400, 200);
-    sunCloudCanvas.parent('sunCloudCanvasContainer');
-
-    // Create canvas for the third canvas
-    let thirdCanvas = createCanvas(200, 200);
-    thirdCanvas.parent('thirdCanvasContainer');
-
-    function draw() {
-      background(220);
-
-      // Drawing code for face and frog canvas
+    function setup() {
+      // Canvas for face and frog
+      let faceFrogCanvas = createCanvas(800, 400);
+      faceFrogCanvas.parent('faceFrogCanvasContainer');
       drawFace(0, 0); 
       drawFrog(400, 0);
 
-      // Drawing code for sun and clouds canvas
-      drawSunAndClouds(0, 0);
+      // Canvas for sun and clouds
+      let sunCloudCanvas = createCanvas(400, 200);
+      sunCloudCanvas.parent('sunCloudCanvasContainer');
+
+      // Third canvas
+      let thirdCanvas = createCanvas(200, 200);
+      thirdCanvas.parent('thirdCanvasContainer');
     }
 
     function drawFace(x, y) {
@@ -77,12 +82,10 @@
       resetMatrix();
     }
 
-    function drawSunAndClouds(x, y) {
-      translate(x, y);
-      let leftX = 160;
-      let rightX = 200;
-      let sunRadius = 100;
-
+    // Draw function for the sun and clouds
+    function draw() {
+      background(184, 236, 255);
+      
       fill(255, 170, 0);
       ellipse(200, 100, sunRadius, sunRadius);
 
@@ -97,10 +100,10 @@
       ellipse(rightX, 100, 126, 97);
       ellipse(rightX + 62, 100, 70, 60);
       ellipse(rightX - 62, 100, 70, 60);
-      leftX -= 1;
-      rightX += 1;
-      sunRadius += 2;
-      resetMatrix();
+
+      leftX -= 0.5;
+      rightX += 0.5;
+      sunRadius += 1;
     }
   </script>
 </body>
