@@ -9,11 +9,14 @@
 <body>
   <h1>Welcome to the Khan Academy Page!</h1>
 
-  <!-- Canvas for the face and frog -->
+  <!-- Canvas container for the face and frog -->
   <div id="faceFrogCanvasContainer"></div>
 
-  <!-- Canvas for the sun and clouds -->
+  <!-- Canvas container for the sun and clouds -->
   <div id="sunCloudCanvasContainer"></div>
+
+  <!-- Canvas container for the third canvas -->
+  <div id="thirdCanvasContainer"></div>
 
   <script>
     function setup() {
@@ -26,6 +29,10 @@
       // Canvas for sun and clouds
       let sunCloudCanvas = createCanvas(400, 200);
       sunCloudCanvas.parent('sunCloudCanvasContainer');
+
+      // Third canvas
+      let thirdCanvas = createCanvas(200, 200); // Change dimensions as needed
+      thirdCanvas.parent('thirdCanvasContainer');
     }
 
     function drawFace(x, y) {
