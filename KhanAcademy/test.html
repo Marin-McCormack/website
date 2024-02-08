@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Canvases</title>
+<style>
+    body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    canvas {
+        border: 2px solid black;
+        width: 200px;
+        height: 150px;
+    }
+</style>
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+    <canvas id="canvas3"></canvas>
+
+    <script>
+        // JavaScript code to draw on the canvases would go here
+        // Example:
+        const canvas1 = document.getElementById('canvas1');
+        const ctx1 = canvas1.getContext('2d');
+        
+        // Drawing a face on canvas1
+        ctx1.beginPath();
+        ctx1.arc(100, 75, 50, 0, 2 * Math.PI);
+        ctx1.fillStyle = 'yellow';
+        ctx1.fill();
+        ctx1.stroke();
+
+        ctx1.beginPath();
+        ctx1.arc(75, 60, 10, 0, 2 * Math.PI);
+        ctx1.arc(125, 60, 10, 0, 2 * Math.PI);
+        ctx1.fillStyle = 'black';
+        ctx1.fill();
+
+        ctx1.beginPath();
+        ctx1.moveTo(60, 95);
+        ctx1.lineTo(140, 95);
+        ctx1.strokeStyle = 'black';
+        ctx1.stroke();
+
+        const canvas2 = document.getElementById('canvas2');
+        const ctx2 = canvas2.getContext('2d');
+
+        // Drawing a frog on canvas2
+        ctx2.fillStyle = 'green';
+        ctx2.fillRect(10, 70, 180, 50);
+
+        ctx2.beginPath();
+        ctx2.arc(50, 100, 30, Math.PI, 0);
+        ctx2.arc(150, 100, 30, Math.PI, 0);
+        ctx2.fillStyle = 'green';
+        ctx2.fill();
+
+        ctx2.beginPath();
+        ctx2.arc(50, 100, 20, Math.PI, 0);
+        ctx2.arc(150, 100, 20, Math.PI, 0);
+        ctx2.fillStyle = 'white';
+        ctx2.fill();
+
+        ctx2.beginPath();
+        ctx2.arc(50, 90, 10, 0, 2 * Math.PI);
+        ctx2.arc(150, 90, 10, 0, 2 * Math.PI);
+        ctx2.fillStyle = 'black';
+        ctx2.fill();
+
+        ctx2.beginPath();
+        ctx2.arc(100, 130, 20, Math.PI, 0);
+        ctx2.strokeStyle = 'green';
+        ctx2.lineWidth = 5;
+        ctx2.stroke();
+
+        const canvas3 = document.getElementById('canvas3');
+        const ctx3 = canvas3.getContext('2d');
+
+        // Drawing a bunny on canvas3
+        ctx3.beginPath();
+        ctx3.arc(100, 75, 50, 0, 2 * Math.PI);
+        ctx3.fillStyle = 'white';
+        ctx3.fill();
+        ctx3.stroke();
+
+        ctx3.beginPath();
+        ctx3.arc(80, 60, 10, 0, 2 * Math.PI);
+        ctx3.arc(120, 60, 10, 0, 2 * Math.PI);
+        ctx3.fillStyle = 'black';
+        ctx3.fill();
+
+        ctx3.beginPath();
+        ctx3.moveTo(60, 90);
+        ctx3.quadraticCurveTo(100, 140, 140, 90);
+        ctx3.strokeStyle = 'black';
+        ctx3.stroke();
+    </script>
+</body>
+</html>
+
