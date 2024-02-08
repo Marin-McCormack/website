@@ -26,82 +26,100 @@
     <canvas id="canvas3"></canvas>
 
     <script>
-        // JavaScript code to draw on the canvases would go here
-        // Example:
+        // Function to draw a face on canvas1
+        function drawFace(x, y, ctx) {
+            ctx.translate(x, y);
+
+            ctx.fillStyle = 'rgb(255, 255, 0)'; // Yellow
+            ctx.beginPath();
+            ctx.arc(202, 208, 150, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgb(46, 46, 41)'; // Dark brown
+            ctx.beginPath();
+            ctx.arc(157, 151, 20, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(304, 142, 20, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgb(252, 65, 65)'; // Red
+            ctx.beginPath();
+            ctx.arc(257, 240, 60, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.resetTransform();
+        }
+
+        // Function to draw a frog on canvas2
+        function drawFrog(x, y, ctx) {
+            ctx.translate(x, y);
+
+            ctx.fillStyle = 'rgb(30, 204, 91)'; // Green
+            ctx.beginPath();
+            ctx.ellipse(200, 250, 100, 50, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgb(255, 255, 255)'; // White
+            ctx.beginPath();
+            ctx.ellipse(150, 200, 15, 15, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.ellipse(250, 200, 15, 15, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgb(10, 10, 10)'; // Black
+            ctx.fillRect(170, 200, 15, 10);
+            ctx.fillRect(215, 200, 15, 10);
+
+            ctx.resetTransform();
+        }
+
+        // Function to draw a bunny on canvas3
+        function drawBunny(x, y, ctx) {
+            ctx.translate(x, y);
+
+            ctx.fillStyle = 'rgb(255, 255, 255)'; // White
+            ctx.beginPath();
+            ctx.ellipse(150, 70, 30, 60, 0, 0, Math.PI * 2); // Left ear
+            ctx.ellipse(240, 70, 30, 60, 0, 0, Math.PI * 2); // Right ear
+            ctx.fill();
+
+            ctx.fillStyle = 'rgb(255, 255, 255)'; // White
+            ctx.beginPath();
+            ctx.ellipse(200, 170, 75, 75, 0, 0, Math.PI * 2); // Face
+            ctx.fill();
+
+            ctx.fillStyle = 'rgb(0, 0, 0)'; // Black
+            ctx.beginPath();
+            ctx.ellipse(170, 150, 10, 10, 0, 0, Math.PI * 2); // Left eye
+            ctx.ellipse(230, 150, 10, 10, 0, 0, Math.PI * 2); // Right eye
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(150, 200); // Mouth
+            ctx.lineTo(250, 200);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillRect(185, 200, 10, 20); // Left tooth
+            ctx.fillRect(205, 200, 10, 20); // Right tooth
+
+            ctx.resetTransform();
+        }
+
+        // Get canvas elements
         const canvas1 = document.getElementById('canvas1');
         const ctx1 = canvas1.getContext('2d');
-        
-        // Drawing a face on canvas1
-        ctx1.beginPath();
-        ctx1.arc(100, 75, 50, 0, 2 * Math.PI);
-        ctx1.fillStyle = 'yellow';
-        ctx1.fill();
-        ctx1.stroke();
-
-        ctx1.beginPath();
-        ctx1.arc(75, 60, 10, 0, 2 * Math.PI);
-        ctx1.arc(125, 60, 10, 0, 2 * Math.PI);
-        ctx1.fillStyle = 'black';
-        ctx1.fill();
-
-        ctx1.beginPath();
-        ctx1.moveTo(60, 95);
-        ctx1.lineTo(140, 95);
-        ctx1.strokeStyle = 'black';
-        ctx1.stroke();
-
         const canvas2 = document.getElementById('canvas2');
         const ctx2 = canvas2.getContext('2d');
-
-        // Drawing a frog on canvas2
-        ctx2.fillStyle = 'green';
-        ctx2.fillRect(10, 70, 180, 50);
-
-        ctx2.beginPath();
-        ctx2.arc(50, 100, 30, Math.PI, 0);
-        ctx2.arc(150, 100, 30, Math.PI, 0);
-        ctx2.fillStyle = 'green';
-        ctx2.fill();
-
-        ctx2.beginPath();
-        ctx2.arc(50, 100, 20, Math.PI, 0);
-        ctx2.arc(150, 100, 20, Math.PI, 0);
-        ctx2.fillStyle = 'white';
-        ctx2.fill();
-
-        ctx2.beginPath();
-        ctx2.arc(50, 90, 10, 0, 2 * Math.PI);
-        ctx2.arc(150, 90, 10, 0, 2 * Math.PI);
-        ctx2.fillStyle = 'black';
-        ctx2.fill();
-
-        ctx2.beginPath();
-        ctx2.arc(100, 130, 20, Math.PI, 0);
-        ctx2.strokeStyle = 'green';
-        ctx2.lineWidth = 5;
-        ctx2.stroke();
-
         const canvas3 = document.getElementById('canvas3');
         const ctx3 = canvas3.getContext('2d');
 
-        // Drawing a bunny on canvas3
-        ctx3.beginPath();
-        ctx3.arc(100, 75, 50, 0, 2 * Math.PI);
-        ctx3.fillStyle = 'white';
-        ctx3.fill();
-        ctx3.stroke();
-
-        ctx3.beginPath();
-        ctx3.arc(80, 60, 10, 0, 2 * Math.PI);
-        ctx3.arc(120, 60, 10, 0, 2 * Math.PI);
-        ctx3.fillStyle = 'black';
-        ctx3.fill();
-
-        ctx3.beginPath();
-        ctx3.moveTo(60, 90);
-        ctx3.quadraticCurveTo(100, 140, 140, 90);
-        ctx3.strokeStyle = 'black';
-        ctx3.stroke();
+        // Draw on canvases
+        drawFace(0, 0, ctx1);
+        drawFrog(0, 0, ctx2);
+        drawBunny(0, 0, ctx3);
     </script>
 </body>
 </html>
