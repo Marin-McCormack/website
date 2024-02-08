@@ -15,8 +15,8 @@
     }
     .canvas-container {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
     }
     canvas {
       margin-bottom: 20px;
@@ -41,6 +41,7 @@
         createCanvas(800, 400);
         drawFace(0, 0);
         drawFrog(400, 0);
+        drawAdditional(0, 400); // Move the additional canvas below the other canvases
       }
 
       function drawFace(x, y) {
@@ -79,7 +80,6 @@
         resetMatrix();
       }
 
-      // New drawing function for the additional canvas
       function drawAdditional(x, y) {
         translate(x, y);
 
@@ -88,29 +88,13 @@
         resetMatrix();
       }
     </script>
+    <canvas id="defaultCanvas0"></canvas> <!-- Existing canvas for face and frog -->
+    <canvas id="defaultCanvas1"></canvas> <!-- Additional canvas for the blue square -->
     <footer>
       <a id="vLink1"><strong> HTML </strong> Valid! </a> |
       <a id="vLink2"><strong> CSS </strong> Valid! </a>
     </footer>
   </div>
-  <script>
-    var additionalCanvas; // Variable to hold the additional canvas
-
-    function setup() {
-      // Create the additional canvas
-      additionalCanvas = createCanvas(200, 200);
-      additionalCanvas.position(300, 420); // Position it below the other canvases
-      drawAdditional(0, 0); // Call the new drawing function
-    }
-
-    function drawAdditional(x, y) {
-      translate(x, y);
-
-      fill(100, 100, 255); // Blue color
-      rect(0, 0, 200, 200); // Displaying a blue rectangle
-      resetMatrix();
-    }
-  </script>
 </body>
 </html>
 
