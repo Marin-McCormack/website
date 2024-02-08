@@ -7,37 +7,39 @@
   <title>Khan Academy</title>
   <style>
     h1, footer {
-      text-align: center;
+        text-align: center;
     }
-    footer > a, footer > a:visited {
-      text-decoration: none;
-      color: #555;
-    }
-    canvas {
-      display: block;
-      margin: 0 auto;
+    footer>a, footer>a:visited {
+        text-decoration: none;
+        color: #555;
     }
   </style>
+  <script>
+      function init() {
+      var loc = window.location.href;
+      var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+      var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                            loc + '?profile=css3';
+      document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+      document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+      }
+      window.onload = init;
+  </script>
 </head>
 <body>
-  <h1>Welcome to the Khan Academy Page!</h1>
+    <h1>Welcome to the Khan Academy Page!</h1>
 
-  <script>
+    <script>
     function setup() {
-      // Canvas for face and frog
-      let faceFrogCanvas = createCanvas(800, 400);
-      faceFrogCanvas.parent('canvasContainer');
+      createCanvas(1000, 400); // Increased canvas width to accommodate the bunny canvas
       drawFace(0, 0); 
       drawFrog(400, 0);
-
-      // Canvas for clouds with the sun
-      let sunCloudCanvas = createCanvas(800, 200);
-      sunCloudCanvas.parent('canvasContainer');
-      drawSunClouds(0, 400);
+      drawBunny(800, 0); // Drawing bunny canvas to the right of the frog
     }
 
     function drawFace(x, y) {
       translate(x, y);
+
       noStroke();
       // face
       fill(255, 255, 0);
@@ -71,41 +73,25 @@
       resetMatrix();
     }
 
-    function drawSunClouds(x, y) {
+    function drawBunny(x, y) {
       translate(x, y);
-      let leftX = 160;
-      let rightX = 200;
-      let sunRadius = 100;
 
-      background(184, 236, 255);
-
-      fill(255, 170, 0);
-      ellipse(200, 100, sunRadius, sunRadius);
-
-      // clouds 
-      fill(255, 255, 255);
-      // left cloud
-      ellipse(leftX, 150, 126, 97);
-      ellipse(leftX + 62, 150, 70, 60);
-      ellipse(leftX - 62, 150, 70, 60);
-
-      // right cloud
-      ellipse(rightX, 100, 126, 97);
-      ellipse(rightX + 62, 100, 70, 60);
-      ellipse(rightX - 62, 100, 70, 60);
-
-      leftX -= 1;
-      rightX += 1;
-      sunRadius += 2;
+      noStroke();
+      fill(255); // White bunny
+      ellipse(900, 200, 100, 100); // Head
+      ellipse(870, 180, 30, 30); // Left ear
+      ellipse(930, 180, 30, 30); // Right ear
+      fill(0); // Black eyes
+      ellipse(885, 200, 10, 10); // Left eye
+      ellipse(915, 200, 10, 10); // Right eye
+      ellipse(900, 220, 20, 10); // Nose
+      resetMatrix();
     }
-  </script>
-
-  <div id="canvasContainer"></div>
-
-  <footer>
-    <a id="vLink1" href="#"><strong> HTML </strong> Valid! </a> |
-    <a id="vLink2" href="#"><strong> CSS </strong> Valid! </a>
-  </footer>
+    </script>
+     <footer>
+    <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+    <a id="vLink2"><strong> CSS </strong> Valid! </a>
+    </footer>
 </body>
 </html>
 
