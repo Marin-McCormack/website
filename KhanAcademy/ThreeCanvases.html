@@ -13,6 +13,14 @@
       text-decoration: none;
       color: #555;
     }
+    .canvas-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    canvas {
+      margin-bottom: 20px;
+    }
   </style>
   <script>
     function init() {
@@ -27,52 +35,74 @@
 </head>
 <body>
   <h1>Welcome to the Khan Academy Page!</h1>
+  <div class="canvas-container">
+    <script>
+      function setup() {
+        createCanvas(800, 400);
+        drawFace(0, 0);
+        drawFrog(400, 0);
+      }
 
+      function drawFace(x, y) {
+        translate(x, y);
+
+        noStroke();
+        // face
+        fill(255, 255, 0);
+        ellipse(202, 208, 300, 300);
+        // eyes
+        fill(46, 46, 41);
+        ellipse(157, 151, 40, 40);
+        ellipse(304, 142, 40, 40);
+        // mouth
+        fill(252, 65, 65);
+        ellipse(257, 240, 120, 136);
+        resetMatrix();
+      }
+
+      function drawFrog(x, y) {
+        translate(x, y);
+        var frogX = 200;
+        var frogY = 250;
+        noStroke();
+        fill(30, 204, 91); // a nice froggy green!
+        ellipse(frogX, frogY, 200, 100); // face
+        ellipse(frogX - 50, frogY - 50, 40, 40); // left eye socket
+        ellipse(frogX + 50, frogY - 50, 40, 40); // right eye socket
+        fill(255, 255, 255); // for the whites of the eyes!
+        ellipse(frogX - 50, frogY - 50, 30, 30); // left eyeball
+        ellipse(frogX + 50, frogY - 50, 30, 30); // right eyeball
+        fill(10, 10, 10);
+        ellipse(frogX, frogY, 100, 50);
+        rect(frogX - 50, frogY - 50, 10, 10);
+        rect(frogX + 50, frogY - 50, 10, 10);
+        resetMatrix();
+      }
+
+      // New drawing function for the additional canvas
+      function drawAdditional(x, y) {
+        translate(x, y);
+
+        fill(100, 100, 255); // Blue color
+        rect(0, 0, 200, 200); // Displaying a blue rectangle
+        resetMatrix();
+      }
+    </script>
+    <footer>
+      <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+      <a id="vLink2"><strong> CSS </strong> Valid! </a>
+    </footer>
+  </div>
   <script>
+    var additionalCanvas; // Variable to hold the additional canvas
+
     function setup() {
-      createCanvas(800, 400);
-      drawFace(0, 0);
-      drawFrog(400, 0);
-      drawAdditional(0, 200); // Call the new drawing function
+      // Create the additional canvas
+      additionalCanvas = createCanvas(200, 200);
+      additionalCanvas.position(300, 420); // Position it below the other canvases
+      drawAdditional(0, 0); // Call the new drawing function
     }
 
-    function drawFace(x, y) {
-      translate(x, y);
-
-      noStroke();
-      // face
-      fill(255, 255, 0);
-      ellipse(202, 208, 300, 300);
-      // eyes
-      fill(46, 46, 41);
-      ellipse(157, 151, 40, 40);
-      ellipse(304, 142, 40, 40);
-      // mouth
-      fill(252, 65, 65);
-      ellipse(257, 240, 120, 136);
-      resetMatrix();
-    }
-
-    function drawFrog(x, y) {
-      translate(x, y);
-      var frogX = 200;
-      var frogY = 250;
-      noStroke();
-      fill(30, 204, 91); // a nice froggy green!
-      ellipse(frogX, frogY, 200, 100); // face
-      ellipse(frogX - 50, frogY - 50, 40, 40); // left eye socket
-      ellipse(frogX + 50, frogY - 50, 40, 40); // right eye socket
-      fill(255, 255, 255); // for the whites of the eyes!
-      ellipse(frogX - 50, frogY - 50, 30, 30); // left eyeball
-      ellipse(frogX + 50, frogY - 50, 30, 30); // right eyeball
-      fill(10, 10, 10);
-      ellipse(frogX, frogY, 100, 50);
-      rect(frogX - 50, frogY - 50, 10, 10);
-      rect(frogX + 50, frogY - 50, 10, 10);
-      resetMatrix();
-    }
-
-    // New drawing function for the additional canvas
     function drawAdditional(x, y) {
       translate(x, y);
 
@@ -81,10 +111,6 @@
       resetMatrix();
     }
   </script>
-  <footer>
-    <a id="vLink1"><strong> HTML </strong> Valid! </a> |
-    <a id="vLink2"><strong> CSS </strong> Valid! </a>
-  </footer>
 </body>
 </html>
 
