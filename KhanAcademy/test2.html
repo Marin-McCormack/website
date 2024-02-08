@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <title>Khan Academy</title>
+  <style>
+    h1, footer {
+      text-align: center;
+    }
+    footer>a, footer>a:visited {
+      text-decoration: none;
+      color: #555;
+    }
+  </style>
+  <script>
+    function init() {
+      var loc = window.location.href;
+      var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+      var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                            loc + '?profile=css3';
+      document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+      document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+    }
+    window.onload = init;
+
+    var eyesize = 15;
+    var toothsize = 20;
+
+    function setup() {
+      createCanvas(1200, 400); // Increased canvas width to accommodate all drawings side by side
+      drawFace(0, 0); 
+      drawFrog(400, 0);
+      drawBunny(800, 0); // Positioned bunny canvas to the right of the frog canvas
+    }
+
+    function drawFace(x, y) {
+      translate(x, y);
+      noStroke();
+      // face
+      fill(255, 255, 0);
+      ellipse(202, 208, 300, 300);
+      // eyes
+      fill(46, 46, 41);
+      ellipse(157, 151, 40, 40);
+      ellipse(304, 142, 40, 40);
+      // mouth
+      fill(252, 65, 65);
+      ellipse(257, 240, 120, 136);
+      resetMatrix();
+    }
+
+    function drawFrog(x, y) {
+      translate(x, y);
+      var frogX = 200;
+      var frogY = 250;
+      noStroke();
+      fill(30, 204, 91); // a nice froggy green!
+      ellipse(frogX, frogY, 200, 100); // face
+      ellipse(frogX - 50, frogY - 50, 40, 40); // left eye socket
+      ellipse(frogX + 50, frogY - 50, 40, 40); // right eye socket
+      fill(255, 255, 255); // for the whites of the eyes!
+      ellipse(frogX - 50, frogY - 50, 30, 30); // left eyeball
+      ellipse(frogX + 50, frogY - 50, 30, 30); // right eyeball
+      fill(10, 10, 10);
+      ellipse(frogX, frogY, 100, 50);
+      rect(frogX - 50, frogY - 50, 10, 10);
+      rect(frogX + 50, frogY - 50, 10, 10);
+      resetMatrix();
+    }
+
+    function drawBunny(x, y) {
+      translate(x, y);
+      noStroke();
+      fill(255);
+      ellipse(150, 70, 60, 120);  // left ear
+      ellipse(240, 70, 60, 120);  // right ear
+      ellipse(200, 170, 150, 150);    // face
+      fill(0);
+      ellipse(170, 150, eyesize, eyesize);  // left eye
+      ellipse(230, 150, eyesize, eyesize);  // right eye
+      line(150, 200, 250, 200);   // mouth
+      noFill();
+      rect(185, 200, 15, toothsize); // left tooth
+      rect(200, 200, 15, toothsize); // right tooth
+      resetMatrix();
+    }
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Khan Academy Page!</h1>
+
+  <footer>
+    <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+    <a id="vLink2"><strong> CSS </strong> Valid! </a>
+  </footer>
+</body>
+</html>
+
