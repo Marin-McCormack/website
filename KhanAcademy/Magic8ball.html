@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <title>Khan Academy</title>
+</head>
+<body>
+  <h1>Welcome to the Khan Academy Page!</h1>
+
+  <div id="canvas-container"></div>
+
+  <script>
+    function setup() {
+      createCanvas(400, 400);
+      fill(0, 0, 0);
+      ellipse(200, 200, 375, 375);
+      fill(60, 0, 255);
+      triangle(200, 104, 280, 280, 120, 280);
+      fill(255);
+      var answer = floor(random(1, 5));
+      if (answer === 1) {
+        text("Absolutely", 176, 200);
+      } else if (answer === 2) {
+        text("Never", 176, 200);
+      } else if (answer === 3) {
+        text("Maybe...", 176, 200);
+      } else if (answer === 4) {
+        text("I'm busy", 176, 200);
+        text("Try again later.", 165, 240);
+      }
+    }
+  </script>
+</body>
+</html>
+
