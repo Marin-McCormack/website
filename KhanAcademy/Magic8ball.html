@@ -10,10 +10,19 @@
   <h1>Welcome to the Khan Academy Page!</h1>
 
   <div id="canvas-container"></div>
+  <button id="generateButton">Generate Random Message</button>
 
   <script>
-    function setup() {
+      var canvas; 
+      
+      function setup() {
       createCanvas(400, 400);
+      canvas.parent('canvas-container');
+      generateMessage();
+      }
+
+      function generateMEssage(){
+      clear();
       fill(0, 0, 0);
       ellipse(200, 200, 375, 375);
       fill(60, 0, 255);
@@ -31,6 +40,8 @@
         text("Try again later.", 165, 240);
       }
     }
+    document.getElementById('generateButton').addEventListener('click',function(){ generateMessage();
+    });
   </script>
 </body>
 </html>
