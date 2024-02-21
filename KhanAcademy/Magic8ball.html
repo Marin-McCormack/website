@@ -13,16 +13,22 @@
   <button id="generateButton">Generate Random Message</button>
 
   <script>
-      var canvas; 
-      
-      function setup() {
-      createCanvas(400, 400);
-      canvas.parent('canvas-container');
-      generateMessage();
-      }
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <title>Khan Academy</title>
+</head>
+<body>
+  <h1>Welcome to the Khan Academy Page!</h1>
 
-      function generateMEssage(){
-      clear();
+  <div id="canvas-container"></div>
+
+  <script>
+    function setup() {
+      createCanvas(400, 400);
       fill(0, 0, 0);
       ellipse(200, 200, 375, 375);
       fill(60, 0, 255);
@@ -40,8 +46,9 @@
         text("Try again later.", 165, 240);
       }
     }
-    document.getElementById('generateButton').addEventListener('click',function(){ generateMessage();
-    });
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>
