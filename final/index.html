@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Marin And Calypso Train</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
-.mySlides {display:none}
-.w3-tag, .fa {cursor:pointer}
-.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-.space-after-submit {
-    height: 50px;
-}
-</style> 
+  <title>Marin And Calypso Train</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html, body, h1, h2, h3, h4 { font-family: "Lato", sans-serif; }
+    .mySlides { display: none; }
+    .w3-tag, .fa { cursor: pointer; }
+    .w3-tag { height: 15px; width: 15px; padding: 0; margin-top: 6px; }
+    .space-after-submit { height: 50px; }
 
+    .w3-top { position: sticky; top: 0; z-index: 1000; }
+    .w3-row, .w3-col { margin-bottom: 16px; }
+    .w3-container { padding: 16px; }
+
+    .section-title { text-align: center; padding: 64px 0; }
+    .section-title span { font-size: x-large; border-bottom: 2px solid #2196F3; padding-bottom: 16px; }
+    .flex-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    .flex-item { flex: 1 1 calc(50% - 16px); box-sizing: border-box; background-color: #f1f1f1; }
+    .flex-item img { width: 100%; height: auto; }
+    .flex-item h3 { margin: 0 0 16px; }
+    .flex-item p { margin: 0 0 16px; }
+
+    @media (max-width: 768px) {
+      .flex-item { flex: 1 1 100%; }
+    }
+
+    .w3-footer { padding: 16px; text-align: center; background-color: #2196F3; color: white; }
+    .w3-footer a { color: black; margin: 0 8px; }
+    .w3-footer a:hover { color: white; }
+  </style>
 </head>
 <body>
 
 <!-- Links (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-large w3-blue">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Home</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Plans</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">About</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Contact</a>
-    </div>
+    <div class="w3-col s3"><a href="#" class="w3-button w3-block">Home</a></div>
+    <div class="w3-col s3"><a href="#about" class="w3-button w3-block">About</a></div>
+    <div class="w3-col s3"><a href="#plans" class="w3-button w3-block">Plans</a></div>
+    <div class="w3-col s3"><a href="#contact" class="w3-button w3-block">Contact</a></div>
   </div>
 </div>
 
@@ -46,61 +54,58 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <p>Mclean Virginia</p>
   </div>
 
-  <!-- Grid -->
-  <div class="w3-row-padding" id="about">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-blue w3-padding-16">Who We Are</span>
-    </div>
-
-    <div class="w3-half w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="marin.png" alt="cody" style="width:100%">
-        <div class="w3-container">
-          <h3>Marin McCormack</h3>
-          <p class="w3-opacity">VA Union ENCL</p>
-          <p>As an ECNL player who has been training all of her life and is committed to play soccer at the Univerity of Virginia she has lots of training exersises. As an outside mid she knows both how to attack and beat players 1v1 and also how to make attacking runs.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="w3-half w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="calypso.png" alt="Mike" style="width:100%">
-        <div class="w3-container">
-          <h3>Calypso</h3>
-          <p class="w3-opacity">VA Union ECNL</p>
-          <p>As an ECNL who has also been playing all of her life and is committed to play soccer at the University of Wisconsin-Madison she has lots of experience training. As a center back she knows how to keep a good defensive position at all times and how to distribute the ball to her teammates.</p>
-        </div>
-      </div>
-    </div>
-<!-- Grid -->
-   <div class="w3-row w3-container" id="plans">
-     <div class="w3-center w3-padding-64">
-       <span class="w3-xlarge w3-bottombar w3-border-blue w3-padding-16">What We Offer</span>
-     </div>
-     <div class="w3-col l3 m6 w3-pale-blue w3-container w3-padding-16">
-       <h3>High intensity training</h3>
-     </div>
- 
-     <div class="w3-col l3 m6 w3-light-blue w3-container w3-padding-16">
-       <h3>Fun training enviornment</h3>
-     </div>
- 
-     <div class="w3-col l3 m6 w3-lightish-blue w3-container w3-padding-16">
-     <h3>Group and individual sessions</h3>
-     </div>
-    <div class="w3-col l3 m6 w3-blueish w3-container w3-padding-16">
-       <h3>coaching that will help your child improve their game</h3>
-    </div>
-   </div>
-<!-- Footer -->
-
-<footer class="w3-container w3-padding-16 w3-blue w3-center">
-  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://www.instagram.com/" target="_blank" class="w3-hover-opacity"><i class="fa fa-instagram"></i></a>
+  <!-- Who We Are Section -->
+  <div class="section-title" id="about">
+    <span>Who We Are</span>
   </div>
-</footer>
+  <div class="flex-container">
+    <div class="flex-item">
+      <img src="marin.png" alt="Marin McCormack">
+      <div class="w3-container">
+        <h3>Marin McCormack</h3>
+        <p class="w3-opacity">VA Union ENCL</p>
+        <p>As an ECNL player who has been training all of her life and is committed to play soccer at the University of Virginia, she has lots of training exercises. As an outside mid, she knows both how to attack and beat players 1v1 and also how to make attacking runs.</p>
+      </div>
+    </div>
+    <div class="flex-item">
+      <img src="calypso.png" alt="Calypso">
+      <div class="w3-container">
+        <h3>Calypso</h3>
+        <p class="w3-opacity">VA Union ECNL</p>
+        <p>As an ECNL player who has also been playing all of her life and is committed to play soccer at the University of Wisconsin-Madison, she has lots of experience training. As a center back, she knows how to keep a good defensive position at all times and how to distribute the ball to her teammates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What We Offer Section -->
+  <div class="section-title" id="plans">
+    <span>What We Offer</span>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item w3-pale-blue">
+      <h3>High intensity training</h3>
+    </div>
+    <div class="flex-item w3-light-blue">
+      <h3>Fun training environment</h3>
+    </div>
+    <div class="flex-item w3-lightish-blue">
+      <h3>Group and individual sessions</h3>
+    </div>
+    <div class="flex-item w3-blue">
+      <h3>Coaching that will help your child improve their game</h3>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-footer">
+    <a href="#" class="w3-button w3-black"><i class="fa fa-arrow-up"></i> To the top</a>
+    <div class="w3-section">
+      <a href="https://www.instagram.com/" target="_blank" class="w3-hover-opacity"><i class="fa fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</div>
 
 </body>
 </html>
+
