@@ -1,105 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Marin And Calypso Train</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
-.w3-tag, .fa {cursor:pointer}
-.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-.space-after-submit {
-    height: 50px;
-}
-</style> 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Training by Marin and Calypso</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, html {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header, .footer {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+        .nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding: 15px;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            padding: 16px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+        }
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-row w3-large w3-blue">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Home</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">About</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Plans</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Contact</a>
-    </div>
-  </div>
-</div>
-
-<!-- Content -->
-<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
-
-  <div class="w3-panel">
-    <h1><b>Calypso and Marin Train</b></h1>
-    <p>Mclean Virginia</p>
-  </div>
-
-  <!-- Grid -->
-  <div class="w3-row-padding" id="about">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-blue w3-padding-16">Who We Are</span>
+    <div class="header">
+        <h1>Soccer Training by Marin and Calypso</h1>
+        <p>Training for Excellence in Soccer</p>
     </div>
 
-    <div class="w3-half w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="marin.png" alt="cody" style="width:100%">
-        <div class="w3-container">
-          <h3>Marin McCormack</h3>
-          <p class="w3-opacity">VA Union ENCL</p>
-          <p>As an ECNL player who has been training all of her life and is committed to play soccer at the Univerity of Virginia she has lots of training exersises. As an outside mid she knows both how to attack and beat players 1v1 and also how to make attacking runs.</p>
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="marin.png" alt="Marin McCormack">
+                    <h2>Marin McCormack</h2>
+                    <p>ECNL Player committed to the University of Virginia.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="calypso.png" alt="Calypso">
+                    <h2>Calypso</h2>
+                    <p>ECNL Player committed to the University of Wisconsin-Madison.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-    <div class="w3-half w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="calypso.png" alt="Mike" style="width:100%">
-        <div class="w3-container">
-          <h3>Calypso</h3>
-          <p class="w3-opacity">VA Union ECNL</p>
-          <p>As an ECNL who has also been playing all of her life and is committed to play soccer at the University of Wisconsin-Madison she has lots of experience training. As a center back she knows how to keep a good defensive position at all times and how to distribute the ball to her teammates.</p>
+    <div class="content" id="services">
+        <h2>Our Services</h2>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>High Intensity Training</h3>
+                    <p>Improve your stamina and performance with our training sessions.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>Fun Training Environment</h3>
+                    <p>Enjoy a supportive and fun environment while improving your skills.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>Group and Individual Sessions</h3>
+                    <p>Choose from group sessions or one-on-one training for personalized coaching.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>Expert Coaching</h3>
+                    <p>Receive top-notch coaching to help you excel in your soccer career.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-<!-- Grid -->
-   <div class="w3-row w3-container" id="plans">
-     <div class="w3-center w3-padding-64">
-       <span class="w3-xlarge w3-bottombar w3-border-blue w3-padding-16">What We Offer</span>
-     </div>
-     <div class="w3-col l3 m6 w3-pale-blue w3-container w3-padding-16">
-       <h3>High intensity training</h3>
-     </div>
- 
-     <div class="w3-col l3 m6 w3-light-blue w3-container w3-padding-16">
-       <h3>Fun training enviornment</h3>
-     </div>
- 
-     <div class="w3-col l3 m6 w3-lightish-blue w3-container w3-padding-16">
-     <h3>Group and individual sessions</h3>
-     </div>
-    <div class="w3-col l3 m6 w3-blueish w3-container w3-padding-16">
-       <h3>coaching that will help your child improve their game</h3>
+
+    <div class="content" id="about">
+        <h2>About Us</h2>
+        <p>We are passionate soccer players dedicated to helping others improve their skills and achieve their goals. With years of experience and commitment to top D1 schools, we offer a unique and effective training program for all ages. </p>
     </div>
-   </div>
-<!-- Footer -->
 
-<footer class="w3-container w3-padding-16 w3-blue w3-center">
-  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://www.instagram.com/" target="_blank" class="w3-hover-opacity"><i class="fa fa-instagram"></i></a>
-  </div>
-</footer>
+    <div class="content" id="contact">
+        <h2>Contact Us</h2>
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKihOCVhZ1Ox_abc123456789/formResponse">
+            <img src="googleform.png" alt="Google Form Link" style="width:100%; max-width:600px;">
+        </a>
+    </div>
 
+    <div class="footer">
+        <p>Follow us on social media</p>
+        <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+    </div>
 </body>
 </html>
+
