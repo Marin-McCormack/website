@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soccer Training by Marin and Calypso</title>
+    <title>Soccer Training with Marin and Calypso</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -15,19 +15,20 @@
         .header, .footer {
             background-color: #000000;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
         .nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             background-color: #333;
         }
         .nav a {
             color: white;
-            padding: 14px 20px;
+            padding: 10px;
             text-decoration: none;
             text-align: center;
+            flex: 1;
         }
         .nav a:hover {
             background-color: #ddd;
@@ -36,28 +37,47 @@
         .content {
             padding: 10px;
         }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .column {
-            float: left;
-            width: 50%;
+            flex: 1 1 300px;
+            max-width: 300px;
             padding: 10px;
         }
-        .row::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
         .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
             transition: 0.3s;
             padding: 10px;
             text-align: center;
         }
         .card img {
-            width: 50%;
+            width: 100%;
+            height: auto;
+        }
+        .about-img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .background-img {
+            background-image: url('soccer.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
         }
         @media screen and (max-width: 600px) {
-            .column {
-                width: 50%;
+            .nav a {
+                padding: 8px;
+            }
+            .header, .footer {
+                padding: 5px;
+            }
+            .card {
+                padding: 5px;
             }
         }
     </style>
@@ -75,18 +95,18 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <div class="content">
+    <div class="content background-img">
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="marin.png" alt="Marin McCormack">
+                    <img src="Marin2.png" alt="Marin McCormack">
                     <h2>Marin McCormack</h2>
                     <p>ECNL Player committed to the University of Virginia.</p>
                 </div>
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="calypso.png" alt="Calypso">
+                    <img src="Calypso2.png" alt="Calypso">
                     <h2>Calypso</h2>
                     <p>ECNL Player committed to the University of Wisconsin-Madison.</p>
                 </div>
@@ -126,19 +146,21 @@
 
     <div class="content" id="about">
         <h2>About Us</h2>
-        <p>We are passionate soccer players dedicated to helping others improve their skills and achieve their goals. With years of experience and commitment to top D1 schools, we offer a unique and effective training program for all ages. </p>
+        <div class="about-img-container">
+            <img src="Sunsetpic.png" alt="About Us Image Sunset"style="width:100%; max-width:300px;">
+        </div>
+        <h3>We are passionate soccer players dedicated to helping others improve their skills and achieve their goals. With years of experience and commitment to top D1 schools, we offer a unique and effective training program for all ages. Although soccer is our passion cross-training is important, so we both run high school track and qualified for states in the year 2024. Some fun facts include that we enjoy trips to the beach, spending time in nature, and love dogs. We hope you choose us to train your kid this summer!</h3>
     </div>
 
     <div class="content" id="contact">
         <h2>Contact Us</h2>
-     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKihOCVhZ1Ox_abc123456789/formResponse">
-            <img src="googleform.png" alt="Google Form Link" style="width:100%; max-width:600px;">
+        <h3>Click on the image below to go to a google form to contact us.</h3>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKihOCVhZ1Ox_abc123456789/formResponse">
+            <img src="googleform.png" alt="Google Form Link" style="width:100%; max-width:200px;">
         </a>
     </div>
 
     <div class="footer">
-        <p>Follow us on social media</p>
-        <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
     </div>
 </body>
 </html>
