@@ -6,10 +6,12 @@
     <title>Personal Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
             background-color: #333;
@@ -21,18 +23,22 @@
             display: flex;
             justify-content: center;
             background-color: #444;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: white;
             padding: 15px 20px;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s;
         }
         nav a:hover {
             background-color: #555;
         }
         section {
-            padding: 60px 20px;
+            padding: 20px 20px;
         }
         .container {
             max-width: 1200px;
@@ -115,8 +121,8 @@
         <img src="tech.jpeg" alt="Education Image">
         <h3>I attend Arlington Tech High School in Arlington, Virginia. Arlington Tech is a Governor’s STEM Academy that offers an accelerated early-college program to APS high school students. It also offers project-based learning, which challenges students to solve real-world problems using creative solutions. 
 
-I also take classes through NOVA. These are called Dual Enrollment classes, and they are college-level classes taught by certified teachers at my school. These classes are challenging and bring another level of academics to my school.
-</h3>
+        I also take classes through NOVA. These are called Dual Enrollment classes, and they are college-level classes taught by certified teachers at my school. These classes are challenging and bring another level of academics to my school.
+        </h3>
     </div>
 </section>
 
@@ -157,7 +163,7 @@ I also take classes through NOVA. These are called Dual Enrollment classes, and 
 <section id="contact" class="contact">
     <div class="container">
         <h2>Contact Information</h2>
-        <h3>You can reach me through my emial at marinmccormack2025@gmail.com and through my phone number which is 703-887-0578</h3>
+        <h3>You can reach me through my email at marinmccormack2025@gmail.com and through my phone number which is 703-887-0578</h3>
     </div>
 </section>
 
